@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Repository } from './models/repository';
+import { Movie } from './models/movie.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Welcome to DVD Application';
+
+  constructor(private repo: Repository){}
+
+  get movie(): Movie {
+    return this.repo.movie;
+  }
 }
