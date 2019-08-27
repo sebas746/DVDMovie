@@ -7,9 +7,13 @@ import { Movie } from '../models/movie.model';
     templateUrl: "./movieTable.component.html"
 })
 export class MovieTableComponent {
-    constructor(private repo: Repository) {}
+    constructor(private repo: Repository) { }
 
     get movies(): Movie[] {
         return this.repo.movies;
+    }
+
+    selectMovie(id: number) {
+        this.repo.getMovie(id);
     }
 }
