@@ -56,5 +56,13 @@ namespace DVDMovie.Controllers
                 return BadRequest(ModelState);
             }
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteStudio(long id)
+        {
+            context.Remove(new Studio { StudioId = id });
+            context.SaveChanges();
+            return Ok(id);
+        }
     }
 }

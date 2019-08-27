@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DVDMovie.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190822200156_Initial")]
+    [Migration("20190827185749_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,8 @@ namespace DVDMovie.Migrations
                     b.Property<string>("Category");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("Image");
 
                     b.Property<string>("Name");
 

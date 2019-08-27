@@ -36,6 +36,7 @@ export class AppComponent {
 
   replaceMovie() {
     let m = this.repo.movies[0];
+    console.log(m);
     m.name = "Modified Movie";
     m.category = "Modified Category";
     this.repo.replaceMovie(m);
@@ -44,5 +45,20 @@ export class AppComponent {
   replaceStudio() {
     let s = new Studio(3, "Modified Studio", "New York", "NY");
     this.repo.replaceStudio(s);
+  }
+  
+  updateMovie() {
+    let changes = new Map<string, any>();
+    changes.set("name", "Green Hornet");
+    changes.set("studio", null);
+    this.repo.updateMovie(1, changes);
+  }
+
+  deleteMovie() {
+    this.repo.deleteMovie(1);
+  }
+
+  deleteStudio() {
+    this.repo.deleteStudio(2);
   }
 }

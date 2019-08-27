@@ -26,6 +26,7 @@ namespace DVDMovie {
 
                     context.Movies.AddRange(
                         new Movie {
+                            Image = "bit.ly/2CLu02t",
                             Name = "Titanic",
                             Description = "A 17-year-old aristocratic falls in love for...",
                             Category = "Drama", Price = 75, Studio = s1,
@@ -34,6 +35,7 @@ namespace DVDMovie {
                             }
                         },
                         new Movie {
+                            Image = "bit.ly/2CLu02t",
                             Name = "The Godfather",
                             Description = "The aging patriarch of an organized cri...",
                             Category = "Thriller", Price = 48, Studio = s1,
@@ -43,6 +45,7 @@ namespace DVDMovie {
                         },
 
                         new Movie {
+                            Image = "bit.ly/2CLu02t",
                             Name = "Team America",
                             Description = "Broadway actor Gary Johnston is recruited...",
                             Category = "Comedy", Price = 34, Studio = s2,
@@ -52,6 +55,7 @@ namespace DVDMovie {
                         },
 
                         new Movie {
+                            Image = "bit.ly/2CLu02t",
                             Name = "Wedding Crashers",
                             Description = "Committed womanizers sneak into wedding..",
                             Category = "Comedy", Price = 19, Studio = s2,
@@ -61,6 +65,7 @@ namespace DVDMovie {
                         },
 
                         new Movie {
+                            Image = "bit.ly/2CLu02t",
                             Name = "Love Actually",
                             Description = "Eigh different couples deal with....",
                             Category = "Romance", Price = 75, Studio = s3,
@@ -70,6 +75,7 @@ namespace DVDMovie {
                         },
 
                         new Movie {
+                            Image = "bit.ly/2CLu02t",
                             Name = "The Way We Are",
                             Description = "Two desperate people have a wonderfull r....",
                             Category = "Romance", Price = 35, Studio = s3,
@@ -79,6 +85,7 @@ namespace DVDMovie {
                         },
 
                         new Movie {
+                            Image = "bit.ly/2CMG4vx",
                             Name = "Ghost",
                             Description = "After a young man is murdered, his spirit....",
                             Category = "Romance", Price = 15, Studio = s3,

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Filter } from './configClasses.repository';
 import { Studio } from './studio.model';
+import { keyframes } from '@angular/animations';
 
 const moviesUrl = "api/movies";
 const studiosUrl = "api/studios";
@@ -61,7 +62,7 @@ export class Repository {
             name: stu.name, city: stu.city, state: stu.state
         };
 
-       
+
         this.http.post<number>(studiosUrl, data)
             .subscribe(response => {
                 stu.studioId = response;
@@ -73,13 +74,13 @@ export class Repository {
     }
 
     replaceMovie(mov: Movie) {
-        let data = { 
+        let data = {
             image: mov.image, name: mov.name, category: mov.category,
             description: mov.description, price: mov.price,
             studio: mov.studio ? mov.studio.studioId : 0
-         };
+        };
 
-         this.http.put(moviesUrl + "/" + mov.movieId, data)
+        this.http.put(moviesUrl + "/" + mov.movieId, data)
             .subscribe(response => {
                 this.getMovies();
             });
@@ -92,6 +93,30 @@ export class Repository {
 
         this.http.put(studiosUrl + "/" + stu.studioId, data)
             .subscribe(response => {
+                this.getStudios();
+            });
+    }
+
+    updateMovie(id: number, changes: Map<string, any>) {
+        let patch = [];
+
+        changes.forEach((value, key) =>
+            patch.push({ op: "replace", path: key, value: value }));
+        console.log(patch);
+
+        this.http.patch(moviesUrl + "/" + id, patch)
+            .subscribe(response => this.getMovies());
+    }
+
+    deleteMovie(id: number) {
+        this.http.delete(moviesUrl + "/" + id)
+            .subscribe(response => { this.getMovies(); });
+    }
+
+    deleteStudio(id: number) {
+        this.http.delete(studiosUrl + "/" + id)
+            .subscribe(response => {
+                this.getMovies();
                 this.getStudios();
             });
     }
