@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DVDMovie.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Newtonsoft.Json;
 
 namespace DVDMovie
 {
@@ -26,6 +26,12 @@ namespace DVDMovie
             services.AddDbContext<DataContext>(options => 
                 options.UseSqlServer(Configuration ["Data:Movies:ConnectionString"])
             );
+
+            services.AddMvc().AddJsonOptions(
+                opts => {
+                    opts.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Serialize;
+                    opts.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
