@@ -6,14 +6,18 @@ import { MovieListComponent } from "./movieList.component";
 import { RatingsComponent } from "./ratings.component";
 import { MovieSelectionComponent } from "./movieSelection.component";
 import { BrowserModule } from "@angular/platform-browser";
+import { CartDetailComponent } from "./cartDetail.component";
+import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: 
     [
         CartSummaryComponent, CategoryFilterComponent, PaginationComponent, 
-        MovieListComponent, RatingsComponent, MovieSelectionComponent
+        MovieListComponent, RatingsComponent, MovieSelectionComponent,
+        CartDetailComponent
     ],
-    imports: [BrowserModule],
+    imports: [BrowserModule, RouterModule, FormsModule],
     exports: [MovieSelectionComponent]
 })
 export class StoreModule {}

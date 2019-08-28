@@ -43,7 +43,7 @@ namespace DVDMovie.Migrations
                         column: x => x.StudioId,
                         principalTable: "Studios",
                         principalColumn: "StudioId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -63,7 +63,7 @@ namespace DVDMovie.Migrations
                         column: x => x.MovieId,
                         principalTable: "Movies",
                         principalColumn: "MovieId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

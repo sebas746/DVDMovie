@@ -10,7 +10,7 @@ export class Movie {
         public description?: string,
         public price?: number,
         public studio?: Studio,
-        public rating?: Rating[]
+        public ratings?: Rating[]
     ) {}
 
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Repository } from '../models/repository';
+import { Movie } from '../models/movie.model';
 
 
 @Component({
@@ -7,5 +8,21 @@ import { Repository } from '../models/repository';
     templateUrl: "ratings.component.html"
 })
 export class RatingsComponent {
-    constructor(private repo: Repository) {}
+    @Input()
+    movie: Movie;    
+    get stars(): boolean[] {
+        if(this.movie != null && this.movie.ratings != null) {
+            let total = this.movie.ratings.map(r => r.stars)
+                .reduce((prev, curr) => prev + curr, 0);
+            
+            let count = Math.round(total / this.movie.ratings.length);
+
+            console.log('aqui');
+            return Array(5).fill(false).map((value, index) => {
+                return index < count;
+            });
+        } else {
+            return [];
+        }
+    } 
 }
