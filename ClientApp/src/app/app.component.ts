@@ -35,8 +35,7 @@ export class AppComponent {
   }
 
   replaceMovie() {
-    let m = this.repo.movies[0];
-    console.log(m);
+    let m = this.repo.movies[0];    
     m.name = "Modified Movie";
     m.category = "Modified Category";
     this.repo.replaceMovie(m);

@@ -2,7 +2,7 @@
     <div *ngFor="let movie of movies" class="card card-outline-primary m-1">
         <div class="card-header">
             <span class="h4">
-                {{movie.name}}
+                <img src="https://{{movie.image}}" alt="[Image Missing]" width="70px" />{{movie.name}}
                 <store-ratings [movie]="movie"></store-ratings>
             </span>
             <span class="float-right badge badge-pill badge-primary">

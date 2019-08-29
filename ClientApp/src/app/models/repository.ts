@@ -38,8 +38,7 @@ export class Repository {
         url += "&metadata=true";
         console.log(url);
         this.http.get<any>(url)
-            .subscribe(response => {
-                console.log(response.data);
+            .subscribe(response => {                
                 this.movies = response.data;
                 this.categories = response.categories;
                 this.pagination.currentPage = 1;
@@ -138,5 +137,16 @@ export class Repository {
     }
     get pagination(): Pagination {
         return this.paginationObject;
+    }
+
+    storeSessionData(dataType: string, data: any) {
+        console.log(data);
+        return this.http.post("/api/session/" + dataType, data)
+            .subscribe(response => {});
+    }
+
+    getSessionData(dataType: string): any {
+        //console.log('session store getting');
+        return this.http.get("/api/session/" + dataType);
     }
 }

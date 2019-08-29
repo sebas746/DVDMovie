@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DVDMovie.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190828143424_ChangeDeleteBehavior")]
+    [Migration("20190829143654_ChangeDeleteBehavior")]
     partial class ChangeDeleteBehavior
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

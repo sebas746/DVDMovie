@@ -17,7 +17,6 @@ export class RatingsComponent {
             
             let count = Math.round(total / this.movie.ratings.length);
 
-            console.log('aqui');
             return Array(5).fill(false).map((value, index) => {
                 return index < count;
             });
